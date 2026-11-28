@@ -16,6 +16,8 @@ namespace tienich {
 	void ThongTin(const std::string& noi_dung);
 	void ThanhCong(const std::string& noi_dung);
 	void BaoLoi(const std::string& noi_dung);
+	void InChucNang(const std::string& noi_dung);  // dòng chức năng: màu vàng
+	void InThoat(const std::string& noi_dung);     // dòng thoát/quay lại: màu đỏ
 	void TamDung();
 	void GoiYHuy();  // in dòng nhắc "Ctrl+Z để hủy"
 	void XoaManHinh();
