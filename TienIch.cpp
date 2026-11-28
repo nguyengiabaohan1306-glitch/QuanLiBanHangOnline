@@ -56,6 +56,18 @@ namespace tienich {
         DatMau(kMacDinh);
     }
 
+    void InChucNang(const string& noi_dung) {
+        DatMau(kVang);
+        cout << noi_dung << "\n";
+        DatMau(kMacDinh);
+    }
+
+    void InThoat(const string& noi_dung) {
+        DatMau(kDo);
+        cout << noi_dung << "\n";
+        DatMau(kMacDinh);
+    }
+
     int LayPhim() {
 #ifdef _WIN32
         return _getch();
