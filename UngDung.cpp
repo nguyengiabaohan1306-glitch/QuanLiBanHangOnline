@@ -18,11 +18,11 @@ void UngDung::ChayChuongTrinh() {
     while (true) {
         tienich::XoaManHinh();
         tienich::ThongTin("===== QUAN LI BAN HANG ONLINE =====");
-        cout << "1. Hien thi thong tin hang hoa\n"
-            << "2. Tim kiem thong tin hang hoa\n"
-            << "3. Dat hang\n"
-            << "4. Quan li\n"
-            << "0. Thoat\n";
+        tienich::InChucNang("1. Hien thi thong tin hang hoa");
+        tienich::InChucNang("2. Tim kiem thong tin hang hoa");
+        tienich::InChucNang("3. Dat hang");
+        tienich::InChucNang("4. Quan li");
+        tienich::InThoat("0. Thoat");
         int lua_chon;
         if (!NhapLuaChon(0, 4, &lua_chon)) return;  // Ctrl+Z ở menu chính: thoát
         switch (lua_chon) {
@@ -70,13 +70,13 @@ void UngDung::HienThiHangHoa() {
         tienich::ThongTin("--- DANH SACH HANG HOA ---");
         if (hang_hoa_.Rong()) return BaoLoiVaDung("Chua co hang hoa nao.");
         hang_hoa_.HienThiSapXep(cach);
-        cout << "\nSap xep danh sach theo:\n"
-            << "1. Ten A-Z          (Sap xep chen)\n"
-            << "2. Gia tang dan     (Sap xep chon)\n"
-            << "3. Gia giam dan     (Sap xep nhanh)\n"
-            << "4. So luong giam dan (Sap xep nhanh)\n"
-            << "5. Ma hang\n"
-            << "0. Quay lai\n";
+        cout << "\nSap xep danh sach theo:\n";
+        tienich::InChucNang("1. Ten A-Z          (Sap xep chen)");
+        tienich::InChucNang("2. Gia tang dan     (Sap xep chon)");
+        tienich::InChucNang("3. Gia giam dan     (Sap xep nhanh)");
+        tienich::InChucNang("4. So luong giam dan (Sap xep nhanh)");
+        tienich::InChucNang("5. Ma hang");
+        tienich::InThoat("0. Quay lai");
         if (!NhapLuaChon(0, 5, &cach) || cach == 0) return;
     }
 }
@@ -193,9 +193,10 @@ void UngDung::KhuVucQuanLi() {
     while (true) {
         tienich::XoaManHinh();
         tienich::ThongTin("===== MENU QUAN LI =====");
-        cout << "1. Xu li don hang (dang cho: " << don_hang_.SoLuong() << ")\n"
-            << "2. Quan li hang hoa\n"
-            << "0. Quay lai\n";
+        tienich::InChucNang("1. Xu li don hang (dang cho: " +
+            std::to_string(don_hang_.SoLuong()) + ")");
+        tienich::InChucNang("2. Quan li hang hoa");
+        tienich::InThoat("0. Quay lai");
         int lua_chon;
         if (!NhapLuaChon(0, 2, &lua_chon) || lua_chon == 0) return;
         if (lua_chon == 1) XuLiDonHang();
@@ -243,11 +244,12 @@ void UngDung::MenuQuanLiHangHoa() {
     while (true) {
         tienich::XoaManHinh();
         tienich::ThongTin("--- QUAN LI HANG HOA ---");
-        cout << "1. Them hang hoa moi\n2. Xoa hang hoa theo ma\n"
-            << "3. Cap nhat so luong hang hoa\n"
-            << "4. Doc du lieu hang hoa tu file\n"
-            << "5. Luu du lieu hang hoa ra file\n"
-            << "0. Quay lai\n";
+        tienich::InChucNang("1. Them hang hoa moi");
+        tienich::InChucNang("2. Xoa hang hoa theo ma");
+        tienich::InChucNang("3. Cap nhat so luong hang hoa");
+        tienich::InChucNang("4. Doc du lieu hang hoa tu file");
+        tienich::InChucNang("5. Luu du lieu hang hoa ra file");
+        tienich::InThoat("0. Quay lai");
         int lua_chon;
         if (!NhapLuaChon(0, 5, &lua_chon) || lua_chon == 0) return;
         tienich::GoiYHuy();
